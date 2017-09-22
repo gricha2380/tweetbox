@@ -9,7 +9,10 @@
 </head>
 <body>
   <div id="container"></div>
+
+
   <script>
+  // React version
   var TweetBox = React.createClass({
   getInitialState: function(){return {text:""};},
   handleChange: function(event) {
@@ -34,5 +37,22 @@ ReactDOM.render(
   document.getElementById("container")
 );
   </script>
+
+<script type="text/javascript">
+// JQuery version
+$("button").prop("disabled", true);
+
+$("textarea").on("input", function() {
+ $("span").text(140 - $(this).val().length);
+
+if ($(this).val().length > 0) {
+    $("button").prop("disabled", false);
+  } else {
+    $("button").prop("disabled", true);
+  }
+});
+
+</script>
+
 </body>
 </html>
